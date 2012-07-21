@@ -44,6 +44,9 @@ tinyMCE.init({
     cleanup_on_startup: true,
     //forced_root_block: "p",
     remove_trailing_nbsp: true,
+    forced_root_block:false,
+    force_p_newlines : false,
+    convert_fonts_to_spans : false,
     
     // callbackss
     file_browser_callback: "CustomFileBrowser",
