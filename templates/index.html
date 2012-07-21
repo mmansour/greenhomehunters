@@ -20,7 +20,7 @@
 
     {% for blog_post in blog_post_list %}
         <h4><a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a></h4>
-        <p>{{ blog_post.content|safe|truncatechars:107 }}</p>
+{#        <p>{{ blog_post.content|safe|truncatechars:107 }}</p>#}
     {% endfor %}
 </p>
 {% endblock %}
