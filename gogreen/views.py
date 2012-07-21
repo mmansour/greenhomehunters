@@ -3,21 +3,16 @@ from gogreen.models import *
 from django.http import HttpResponse, HttpResponsePermanentRedirect
 from django.template import RequestContext
 from django.core import serializers
-from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
-from decimal import *
 import logging
-from django.utils import simplejson
 from mezzanine.utils.views import paginate
+from mezzanine.blog.models import BlogPost, BlogCategory
 
 
 def home(request):
-
-#        thebattle = get_object_or_404(Battle, is_homepage=True)
-#        initial_poll_results = get_poll_results(thebattle)
-#        #ORDER BY PUBDATE (MOST RECENT)
-##        featured_videos = Battle.objects.filter(status=2).filter(is_featured=True)[:8]
-#        featured_videos = Battle.objects.filter(status=2).filter(is_featured=True)
+    blog_post_list = BlogPost.objects.filter(status=2)[:7]
+    for b in blog_post_list:
+        print b
 ##        logger.debug('View: home - Success')
     return render_to_response('index.html',
-                            {},
+                            {'blog_post_list':blog_post_list},
                              context_instance=RequestContext(request))
