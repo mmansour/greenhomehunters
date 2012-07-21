@@ -18,6 +18,6 @@ notes/
 log/
 migrations/
 static/media/
-!greenhomeslistings/urls.py
+!gogreen/urls.py
 
 
