@@ -74,9 +74,7 @@ $(function() {
 </div>
 {% endfor %}
 {% endnevercache %}
-
-
-<h1>{% block title %}{% endblock %}</h1>
+{#<h1>{% block title %}{% endblock %}</h1>#}
 
 <ul class="breadcrumb">
 {% spaceless %}
@@ -84,16 +82,18 @@ $(function() {
 {% endspaceless %}
 </ul>
 
+{% block title_header %}{% endblock %}
+
 </div>
 
 <div class="container">
 <div class="row">
 
-<div class="span3 left">
+<div class="span2 left">
     <div class="panel tree">{% page_menu "pages/menus/tree.html" %}</div>
 </div>
 
-<div class="span6 middle">
+<div class="span7 middle">
     {% block main %}{% endblock %}
 </div>
 
